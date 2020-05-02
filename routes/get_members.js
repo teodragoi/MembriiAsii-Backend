@@ -24,12 +24,12 @@ app.get(`/all_members`, async function (req, res) {
         }
         if (!ImageData)
             return res.status(404).json({
-                "members": "data",
+                "members": data,
                 "message": "no members in db",
                 "succes": "false"
             })
         return res.status(200).json({
-            "members": "data",
+            "members": data,
             "succes": "true"
         })
     });
@@ -63,7 +63,7 @@ app.get(`/member_by_id`, async function (req, res) {
     //     "member": member,
     //     succes: true
     // })
-    await member_model.findOne({ surname: id }, (err, data) => {
+    await member_model.findOne({ "_id": id }, (err, data) => {
         if (err) {
             console.log("getting member by id err: ")
             console.log(err);
@@ -73,12 +73,12 @@ app.get(`/member_by_id`, async function (req, res) {
         }
         if (!data)
             return res.status(404).json({
-                "members": "data",
+                "members": data,
                 "message": "no such id in db",
                 "succes": "false"
             })
         return res.status(200).json({
-            "members": "data",
+            "members": data,
             "succes": "true"
         })
     });
