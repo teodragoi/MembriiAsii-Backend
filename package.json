@@ -2,7 +2,7 @@
   "name": "membriiasii-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "./routes/add_member.js",
+  "main": "./routes/get_members.js",
   "scripts": {
     "start": "nodemon main.js"
   },

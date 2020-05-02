@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const { mongoose, collection } = require("../utils/dbconn.js");
 const new_member_schema = mongoose.Schema({
     surname: {
         type: String,
@@ -34,4 +34,4 @@ const new_member_schema = mongoose.Schema({
     },
 });
 
-module.exports = mongoose.model("new_member_model", new_member_schema);
+module.exports = mongoose.model(collection, new_member_schema);
